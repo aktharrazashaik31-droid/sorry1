@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0">
+<title>for Sai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Orbitron:wght@400;500;600;700&family=Caveat:wght@500;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+<div class="web-overlay" aria-hidden="true"></div>
+
+<button id="soundToggle" class="sound-toggle" aria-label="Toggle ambient sound">
+  <span class="sound-icon">🔊</span>
+</button>
+
+<div class="progress-rail" aria-hidden="true"><div class="progress-fill" id="progressFill"></div></div>
+
+<main id="scrollRoot">
+
+  <!-- PAGE 0 — ENTRY -->
+  <section class="panel entry" id="p0">
+    <div class="web-corner tl" aria-hidden="true"></div>
+    <div class="web-corner br" aria-hidden="true"></div>
+    <div class="entry-content">
+      <p class="reveal-line" data-delay="0">Hey Sai…</p>
+      <p class="reveal-line" data-delay="1400">I made something for you.</p>
+      <p class="reveal-line small" data-delay="2800">Just take a minute.</p>
+      <button class="enter-btn reveal-line" data-delay="3600" id="enterBtn">Enter <span class="heart-glyph">♡</span></button>
+    </div>
+    <div class="hud-ring" aria-hidden="true"></div>
+  </section>
+
+  <!-- PAGE 1 — SORRY -->
+  <section class="panel sorry" id="p1">
+    <div class="panel-inner">
+      <h2 class="heading">I'm Sorry.</h2>
+      <div class="line-stack" data-stagger>
+        <p>Nijam chepthunna Sai…</p>
+        <p>Nenu inni sarlu sorry cheppano naake teliyadu.</p>
+        <p>1000 times kante ekkuva cheppi unta…</p>
+        <p class="gap">Still… asal nen em chesano naake teliyatledu.</p>
+        <p>Nuvvu enduku ila feel ayyavo kuda naaku complete ga ardham kaavatledu.</p>
+        <p class="gap">But naa valla neeku edaina hurt ayithe…</p>
+      </div>
+      <p class="emphasis">I'm genuinely sorry.</p>
+      <span class="tiny-heart" aria-hidden="true">♥</span>
+    </div>
+  </section>
+
+  <!-- PAGE 2 — NO EXCUSES -->
+  <section class="panel excuses" id="p2">
+    <div class="panel-inner">
+      <h2 class="heading">No excuses.</h2>
+      <div class="card-row">
+        <button class="flip-card" data-reveal="No ego… because you matter more.">
+          <span class="card-face">No ego.</span>
+        </button>
+        <button class="flip-card" data-reveal="No excuses… because I don't want to defend myself.">
+          <span class="card-face">No explanations.</span>
+        </button>
+        <button class="flip-card" data-reveal="Just sorry… because I genuinely mean it.">
+          <span class="card-face">Just sorry.</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 3 — LITTLE THINGS -->
+  <section class="panel little-things" id="p3">
+    <div class="panel-inner">
+      <h2 class="heading">Even now…</h2>
+      <div class="bubble-field">
+        <span class="bubble" style="--x:10%; --d:0s">Tinnava?</span>
+        <span class="bubble" style="--x:60%; --d:1.2s">Good morning ❤️</span>
+        <span class="bubble" style="--x:30%; --d:2.4s">Good night 🌙</span>
+      </div>
+      <div class="line-stack" data-stagger>
+        <p>Nuvvu naatho maatladakapoyina kuda…</p>
+        <p>I still ask.</p>
+        <p>Not because I want to pressure you.</p>
+        <p>Not because I expect anything.</p>
+        <p>Because I genuinely care.</p>
+        <p class="gap emphasis-sm">I genuinely think about you.</p>
+        <p class="emphasis-sm">I genuinely love you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 4 — SELF RESPECT -->
+  <section class="panel self-respect" id="p4">
+    <div class="panel-inner">
+      <h2 class="heading">One thing I want you to understand…</h2>
+      <div class="line-stack" data-stagger>
+        <p>Nenu inni sarlu sorry chepthunnanu ante…</p>
+        <p>Naaku self-respect ledu ani kaadu.</p>
+        <p>Naa self-respect ni pakkana petti ninnu please cheyyadaniki kuda kaadu.</p>
+        <p class="gap">I'm saying sorry because I'm choosing you over my ego.</p>
+        <p class="tanglish">Naa ego kanna ninnu paina chusthunna.</p>
+        <p class="emphasis-sm">That's all.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 5 — PORTAL / GLITCH -->
+  <section class="panel portal" id="p5">
+    <div class="portal-ring" aria-hidden="true">
+      <div class="portal-ring-inner"></div>
+    </div>
+    <div class="panel-inner">
+      <div class="line-stack glitch-stack" data-stagger>
+        <p>Maybe somewhere between everything that happened…</p>
+        <p class="glitch-text" data-text="…I missed something.">…I missed something.</p>
+        <p>Maybe I did something that hurt you.</p>
+        <p>I don't know what it was.</p>
+        <p>But if I did…</p>
+      </div>
+      <p class="emphasis big-emphasis">SORRY, SAI.</p>
+    </div>
+  </section>
+
+  <!-- PAGE 6 — HEART / ARC -->
+  <section class="panel heart-core" id="p6">
+    <div class="panel-inner">
+      <div class="arc-heart">
+        <div class="arc-ring r1"></div>
+        <div class="arc-ring r2"></div>
+        <span class="arc-label">SAI</span>
+        <span class="orbit-word w1">Care</span>
+        <span class="orbit-word w2">Respect</span>
+        <span class="orbit-word w3">Love</span>
+        <span class="orbit-word w4">Sorry</span>
+      </div>
+      <div class="line-stack" data-stagger>
+        <p>Nuvvu naaku chala important.</p>
+        <p>More than my ego.</p>
+        <p>More than winning an argument.</p>
+        <p>More than proving myself right.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 7 — FINAL MESSAGE -->
+  <section class="panel final-message" id="p7">
+    <div class="panel-inner">
+      <div class="line-stack slow-stack" data-stagger>
+        <p>Nuvvu naatho maatladatledu…</p>
+        <p>Nuvvu nannu ignore chesthunnav…</p>
+        <p>Enduku ani naaku teliyadu.</p>
+        <p>Nen asal em chesano kuda naaku teliyadu.</p>
+        <p class="gap">Kaani nenu sorry cheppadam aapaledu.</p>
+        <p>Because I genuinely care about you.</p>
+        <p>And because I genuinely love you.</p>
+        <p class="gap">Nuvvu naaku naa ego kanna ekkuva important.</p>
+        <p>Naa self-respect ledu ani kaadu…</p>
+        <p>Ninnu naa ego kanna paina petta.</p>
+      </div>
+      <p class="pause-word">Actually…</p>
+      <p class="emphasis">Maatladu.</p>
+      <p class="emphasis-sm">Inkem ledu.</p>
+    </div>
+  </section>
+
+  <!-- PAGE 8 — RAW FINAL -->
+  <section class="panel raw" id="p8">
+    <div class="panel-inner raw-inner">
+      <p class="handwritten">Cheater annav…</p>
+      <p class="handwritten pause">Nenu asal em chesano naake teliyadu.</p>
+      <p class="handwritten">But aa word entha hurting ga untundo telsaa?</p>
+      <p class="handwritten pause">Actually…</p>
+      <p class="handwritten">I changed for you.</p>
+      <p class="handwritten">I tried to become better for you.</p>
+      <p class="handwritten pause">I love you unconditionally.</p>
+      <p class="handwritten">Antha kanna nenu em cheyyagalanu?</p>
+      <p class="handwritten pause">Nuvvu naatho maatladithe chaalu.</p>
+      <p class="handwritten">Inkem ledu.</p>
+    </div>
+  </section>
+
+  <!-- FINAL SCREEN -->
+  <section class="panel finale" id="p9">
+    <div class="panel-inner finale-inner">
+      <span class="mini-heart" aria-hidden="true">♥</span>
+      <p class="finale-line" data-delay="0">Sorry sorry Sai ❤️</p>
+      <p class="finale-line" data-delay="1400">Please Sai… please Sai…</p>
+      <p class="finale-line" data-delay="2800">Please Sai… pls please Sai…</p>
+      <p class="finale-main" data-delay="4400">Naatho maatladu ❤️</p>
+      <p class="finale-sub" data-delay="5600">Inkem ledu.</p>
+      <p class="finale-sign" data-delay="6800">— From someone who genuinely cares about you.</p>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
